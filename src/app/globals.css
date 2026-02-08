@@ -3,24 +3,64 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --sidebar-bg: #f5f5f5;
+  --primary: #f55733;
+  --text-primary: #171717;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-sidebar: var(--sidebar-bg);
+  --color-primary: var(--primary);
+  --font-sans: var(--font-nunito);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Star Button Animations */
+@keyframes star-btn {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.animate-star-btn {
+  animation: star-btn calc(var(--duration) * 1s) linear infinite;
+}
+
+@property --r {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotateGradient {
+  from {
+    --r: 0deg;
+  }
+  to {
+    --r: 360deg;
+  }
+}
+
+.rotatingGradient {
+  background: conic-gradient(from var(--r), #f55733, #ffffff, #f55733);
+  animation: rotateGradient 4s linear infinite;
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
 }

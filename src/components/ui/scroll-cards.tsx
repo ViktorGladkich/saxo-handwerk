@@ -37,7 +37,7 @@ const Card: FC<iCardProps> = ({
         {/* Dark Overlay for readability since we place text over image */}
         <div className="absolute inset-0 z-10 bg-black/40" />
 
-        <span className="relative z-20 font-bold text-5xl md:text-6xl mt-5 text-center">
+        <span className="relative z-20 font-bold text-3xl md:text-6xl mt-5 text-center px-4">
           <span
             className="font-black font-sans tracking-tight"
             style={{ color: textColor }}
@@ -46,7 +46,7 @@ const Card: FC<iCardProps> = ({
           </span>
         </span>
         <div
-          className="relative z-20 text-lg md:text-xl font-medium font-sans text-center mb-0 mt-4 lowercase tracking-wide"
+          className="relative z-20 text-base md:text-xl font-medium font-sans text-center mb-0 mt-4 lowercase tracking-wide px-6 md:px-0 max-w-2xl"
           style={{ lineHeight: 1.4, color: textColor }}
         >
           {description}

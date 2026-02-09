@@ -30,7 +30,6 @@ const StickyCorner = ({
 );
 
 // FAQ Data
-// FAQ Data
 const faqs = [
   {
     question: "Welche Leistungen bietet Saxo Handwerk genau an?",
@@ -164,9 +163,9 @@ export function FAQSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* Left Column: Image */}
-          <div className="sticky top-24">
+          <div className="relative lg:sticky lg:top-24">
             {/* Image with Sticky Corner */}
-            <div className="relative w-full max-w-[500px] aspect-square rounded-[40px] overflow-hidden hidden lg:block group">
+            <div className="relative w-full max-w-[500px] aspect-square rounded-[40px] overflow-hidden group mx-auto lg:mx-0">
               <Image
                 src="/images/about_hands_4k.png"
                 alt="FAQ Visual"
@@ -176,30 +175,9 @@ export function FAQSection() {
 
               {/* Sticky Corner Effect - Bottom Left */}
               <div className="absolute bottom-0 left-0 z-20">
-                {/* Visual Block itself */}
+                {/* Visual Block itself - Empty white corner */}
                 <div className="bg-white w-32 h-32 rounded-tr-[40px] flex items-center justify-center relative">
-                  {/* Rotating Text */}
-                  <div className="absolute inset-0 animate-spin-slow flex items-center justify-center">
-                    <svg viewBox="0 0 100 100" className="w-full h-full p-2">
-                      <path
-                        id="curve"
-                        d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                        fill="transparent"
-                      />
-                      <text className="fill-[#333] text-[10px] font-bold uppercase tracking-[0.15em]">
-                        <textPath href="#curve" startOffset="0%">
-                          • Beratung • Planung • Umsetzung •
-                        </textPath>
-                      </text>
-                    </svg>
-                  </div>
-
-                  {/* Icon Center */}
-                  <div className="relative z-10 w-12 h-12 flex items-center justify-center">
-                    <span className="text-[#f55733] font-black text-3xl">
-                      ?
-                    </span>
-                  </div>
+                  {/* Empty content */}
                 </div>
 
                 {/* Right Connector */}

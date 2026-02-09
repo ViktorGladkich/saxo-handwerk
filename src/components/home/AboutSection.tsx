@@ -26,7 +26,7 @@ export const AboutSection = () => {
               </div>
               <h2 className="text-4xl md:text-6xl font-black font-sans text-[#333] mb-8 leading-[0.9] uppercase">
                 Tradition <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f55733] to-[#d43d1a]">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#f55733] to-[#d43d1a]">
                   trifft Moderne
                 </span>
               </h2>

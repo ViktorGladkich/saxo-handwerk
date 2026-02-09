@@ -3,6 +3,7 @@ import { Services } from "@/components/home/Services";
 import { ProcessStack } from "@/components/home/ProcessStack";
 import { AboutSection } from "@/components/home/AboutSection";
 import { FAQSection } from "@/components/home/FAQ";
+import { TeamSection } from "@/components/home/TeamSection";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <AboutSection />
       <Services />
       <ProcessStack />
+      <TeamSection />
       <FAQSection />
     </div>
   );

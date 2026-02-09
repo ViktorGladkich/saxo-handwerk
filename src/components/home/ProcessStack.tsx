@@ -38,7 +38,7 @@ export const ProcessStack = () => {
     <section id="process" className="bg-white py-24 text-stone-900">
       <div className="container px-6 xl:px-12 mx-auto">
         <div className="grid md:grid-cols-2 md:gap-8 xl:gap-12">
-          <div className="left-0 top-0 md:sticky md:h-svh md:py-12 flex flex-col justify-center">
+          <div className="left-0 top-0 md:sticky md:h-svh md:py-12 flex flex-col justify-center items-center text-center md:items-start md:text-left">
             <h5 className="text-xs uppercase tracking-wide text-[#f55733] font-bold font-sans">
               Unser Prozess
             </h5>

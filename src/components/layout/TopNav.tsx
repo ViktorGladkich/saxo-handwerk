@@ -13,7 +13,7 @@ export const TopNav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-[#545454] bg-[#424242]/95 px-4 py-3 backdrop-blur-md md:hidden">
+    <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-[#333] bg-[#111111]/95 px-4 py-3 backdrop-blur-md md:hidden">
       <Link href="/" className="flex items-center gap-2">
         <div className="h-8 w-8 rounded-full bg-[#f55733] flex items-center justify-center text-white font-bold text-lg">
           S
@@ -34,7 +34,7 @@ export const TopNav = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute left-0 right-0 top-16 border-b border-[#545454] bg-[#424242] px-4 py-4 shadow-xl"
+            className="absolute left-0 right-0 top-16 border-b border-[#333] bg-[#111111] px-4 py-4 shadow-xl"
           >
             <ul className="flex flex-col gap-2">
               {NAV_ITEMS.map((item) => {

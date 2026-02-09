@@ -35,17 +35,17 @@ const PROCESS_PHASES = [
 
 export const ProcessStack = () => {
   return (
-    <section className="bg-white py-24 text-stone-900">
+    <section id="process" className="bg-white py-24 text-stone-900">
       <div className="container px-6 xl:px-12 mx-auto">
         <div className="grid md:grid-cols-2 md:gap-8 xl:gap-12">
           <div className="left-0 top-0 md:sticky md:h-svh md:py-12 flex flex-col justify-center">
-            <h5 className="text-xs uppercase tracking-wide text-[#f55733] font-bold">
+            <h5 className="text-xs uppercase tracking-wide text-[#f55733] font-bold font-sans">
               Unser Prozess
             </h5>
-            <h2 className="mb-6 mt-4 text-4xl font-bold tracking-tight text-[#333]">
+            <h2 className="mb-6 mt-4 text-4xl font-bold font-sans tracking-tight text-[#333]">
               Planung Ihres <span className="text-[#f55733]">Bauprojekts</span>
             </h2>
-            <p className="max-w-prose text-base text-[#545454]">
+            <p className="max-w-prose text-base text-[#545454] font-sans">
               Unser Weg beginnt mit einem tiefen Verständnis für Ihre Vision.
               Wir begleiten Sie von der ersten Idee bis zur fertigen Umsetzung
               mit Fachwissen, Leidenschaft und Präzision.
@@ -59,15 +59,15 @@ export const ProcessStack = () => {
                 className="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm backdrop-blur-md"
               >
                 <div className="flex items-center justify-between gap-4">
-                  <h2 className="my-6 text-2xl font-bold tracking-tighter text-[#333]">
+                  <h2 className="my-6 text-2xl font-bold font-sans tracking-tighter text-[#333]">
                     {phase.title}
                   </h2>
-                  <h3 className="text-2xl font-bold text-[#f55733]">
+                  <h3 className="text-2xl font-bold font-sans text-[#f55733]">
                     {String(index + 1).padStart(2, "0")}
                   </h3>
                 </div>
 
-                <p className="text-[#545454] leading-relaxed">
+                <p className="text-[#545454] font-sans leading-relaxed">
                   {phase.description}
                 </p>
               </CardSticky>

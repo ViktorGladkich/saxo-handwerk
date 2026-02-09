@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { CardsParallax, type iCardItem } from "@/components/ui/scroll-cards";
 
 const serviceItems: iCardItem[] = [
@@ -8,7 +9,7 @@ const serviceItems: iCardItem[] = [
     description:
       "Aus Alt mach Neu – wir revitalisieren Ihre Immobilie von Grund auf.",
     tag: "sanierung",
-    src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop",
+    src: "/images/services_complete_renovation.png",
     link: "/services/sanierung",
     color: "#f55733",
     textColor: "white",
@@ -18,17 +19,18 @@ const serviceItems: iCardItem[] = [
     description:
       "Individuelle Raumkonzepte und Trockenbau für modernes Wohnen.",
     tag: "innenausbau",
-    src: "https://images.unsplash.com/photo-1620621752939-2794be6a3313?q=80&w=2670&auto=format&fit=crop",
+    src: "/images/services_interior_fitting_v2.png",
     link: "/services/innenausbau",
     color: "#424242",
     textColor: "white",
   },
   {
-    title: "Fenster & Türen",
-    description: "Hochwertige Bauelemente für Sicherheit und Energieeffizienz.",
-    tag: "fenster",
-    src: "https://images.unsplash.com/photo-1503708928676-1cb796a0891e?q=80&w=2670&auto=format&fit=crop",
-    link: "/services/fenster",
+    title: "Bäder & Sanitär",
+    description:
+      "Ihr Traumbad aus einer Hand – von der Planung bis zur Installation.",
+    tag: "baeder",
+    src: "/images/services_bathroom_sanitary.png",
+    link: "/services/baeder",
     color: "#f55733",
     textColor: "white",
   },
@@ -36,8 +38,26 @@ const serviceItems: iCardItem[] = [
     title: "Boden & Fliesen",
     description: "Meisterhafte Verlegung für langlebige und stilvolle Böden.",
     tag: "boden",
-    src: "https://images.unsplash.com/photo-1581858726768-fd8a641fecc1?q=80&w=2670&auto=format&fit=crop",
+    src: "/images/services_flooring_tiling.png",
     link: "/services/boden",
+    color: "#424242",
+    textColor: "white",
+  },
+  {
+    title: "Fenster & Türen",
+    description: "Hochwertige Bauelemente für Sicherheit und Energieeffizienz.",
+    tag: "fenster",
+    src: "/images/services_windows_doors.png",
+    link: "/services/fenster",
+    color: "#f55733",
+    textColor: "white",
+  },
+  {
+    title: "Fassaden & Putze",
+    description: "Schutz und Ästhetik für Ihre Gebäudehülle.",
+    tag: "fassaden",
+    src: "/images/services_facades_plaster_v2.png",
+    link: "/services/fassaden",
     color: "#424242",
     textColor: "white",
   },
@@ -45,15 +65,22 @@ const serviceItems: iCardItem[] = [
 
 export const Services = () => {
   return (
-    <section className="bg-white min-h-screen relative">
-      <div className="container mx-auto px-6 py-24 mb-0">
-        <h2 className="text-4xl md:text-5xl font-black text-[#333] mb-4 uppercase">
-          Unsere <span className="text-[#f55733]">Leistungen</span>
-        </h2>
-        <p className="text-xl text-[#545454] max-w-2xl">
-          Wir bieten Ihnen ein umfassendes Spektrum an Handwerksleistungen aus
-          einer Hand.
-        </p>
+    <section id="services" className="bg-white min-h-screen relative">
+      <div className="container mx-auto px-6 py-24 mb-0 flex flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h2 className="text-4xl font-sans md:text-5xl font-black text-[#333] mb-6 uppercase">
+            Unsere <span className="text-[#f55733]">Leistungen</span>
+          </h2>
+          <p className="text-xl font-sans md:text-2xl text-[#545454] max-w-3xl mx-auto leading-relaxed">
+            Wir bieten Ihnen ein umfassendes Spektrum an Handwerksleistungen aus
+            einer Hand – von der Planung bis zur perfekten Umsetzung.
+          </p>
+        </motion.div>
       </div>
       <CardsParallax items={serviceItems} />
     </section>

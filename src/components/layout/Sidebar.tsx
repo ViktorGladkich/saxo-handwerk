@@ -16,7 +16,7 @@ export const Sidebar = () => {
   return (
     <>
       {/* MAIN SIDEBAR (Fixed, Always Visible) */}
-      <aside className="fixed left-0 top-0 z-50 hidden h-screen w-[80px] flex-col items-center bg-[#424242] md:flex shadow-2xl py-8 gap-8">
+      <aside className="fixed left-0 top-0 z-50 hidden h-screen w-[80px] flex-col items-center bg-[#111111] md:flex shadow-2xl py-8 gap-8">
         {/* Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}

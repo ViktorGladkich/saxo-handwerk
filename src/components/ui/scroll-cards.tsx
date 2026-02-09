@@ -29,11 +29,9 @@ const Card: FC<iCardProps> = ({
 }) => {
   // Added top-24 to offset fixed header if any, generally centers the card sticky in viewport
   return (
-    <div className="h-screen flex items-center justify-center sticky top-0 md:p-0 px-4">
+    <div className="h-screen w-full flex items-center justify-center sticky top-0 px-4">
       <div
-        className="relative flex flex-col h-[300px] w-[700px] py-12 px-10 md:px-12
-				rotate-0 md:h-[400px] md:w-[600px] items-center justify-center mx-auto 
-				shadow-2xl rounded-3xl overflow-hidden pr-3 pl-3 pt-3 pb-4"
+        className="relative flex flex-col w-full max-w-[1100px] h-[60vh] md:h-[650px] items-center justify-center mx-auto overflow-hidden rounded-[32px]"
         style={{ backgroundColor: color }}
       >
         {/* Dark Overlay for readability since we place text over image */}
@@ -41,14 +39,14 @@ const Card: FC<iCardProps> = ({
 
         <span className="relative z-20 font-bold text-5xl md:text-6xl mt-5 text-center">
           <span
-            className="font-black tracking-tight"
+            className="font-black font-sans tracking-tight"
             style={{ color: textColor }}
           >
             {title}
           </span>
         </span>
         <div
-          className="relative z-20 text-lg md:text-xl font-medium text-center mb-0 mt-4 lowercase tracking-wide"
+          className="relative z-20 text-lg md:text-xl font-medium font-sans text-center mb-0 mt-4 lowercase tracking-wide"
           style={{ lineHeight: 1.4, color: textColor }}
         >
           {description}

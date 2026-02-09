@@ -1,19 +1,9 @@
-import {
-  Home,
-  User,
-  Briefcase,
-  FileText,
-  LayoutGrid,
-  Mail,
-  DollarSign,
-} from "lucide-react";
+import { Home, User, Briefcase, LayoutGrid, Mail } from "lucide-react";
 
 export const NAV_ITEMS = [
   { label: "Home", href: "/", icon: Home },
-  { label: "About", href: "/about", icon: User },
-  { label: "Services", href: "/services", icon: Briefcase },
-  { label: "Projects", href: "/projects", icon: LayoutGrid },
-  { label: "Blogs", href: "/blog", icon: FileText },
-  { label: "Pricing", href: "/pricing", icon: DollarSign },
-  { label: "Contact", href: "/contact", icon: Mail },
+  { label: "Über Uns", href: "/#about", icon: User },
+  { label: "Leistungen", href: "/#services", icon: Briefcase },
+  { label: "Ablauf", href: "/#process", icon: LayoutGrid },
+  { label: "Kontakt", href: "/contact", icon: Mail },
 ];

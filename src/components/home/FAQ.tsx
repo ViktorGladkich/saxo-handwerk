@@ -150,65 +150,73 @@ export function FAQSection() {
   return (
     <section className="bg-white py-24 md:py-32 w-full">
       <div className="container mx-auto px-4 md:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center gap-4 mb-16">
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#f55733] to-[#d43d1a] font-bold tracking-wider uppercase w-fit text-sm">
-            Häufige Fragen
-          </span>
-          <h2 className="text-4xl font-sans md:text-6xl font-black text-[#333] uppercase leading-none">
-            Klare Antworten auf <br />
-            <span className="text-gray-400 font-sans">Ihre Fragen.</span>
-          </h2>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Section Header */}
+          <div className="flex flex-col items-center text-center gap-4 mb-16">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#f55733] to-[#d43d1a] font-bold tracking-wider uppercase w-fit text-sm">
+              Häufige Fragen
+            </span>
+            <h2 className="text-4xl font-sans md:text-6xl font-black text-[#333] uppercase leading-none">
+              Klare Antworten auf <br />
+              <span className="text-gray-400 font-sans">Ihre Fragen.</span>
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          {/* Left Column: Image */}
-          <div className="relative lg:sticky lg:top-24">
-            {/* Image with Sticky Corner */}
-            <div className="relative w-full max-w-[500px] aspect-square rounded-[40px] overflow-hidden group mx-auto lg:mx-0">
-              <Image
-                src="/images/about_hands_4k.png"
-                alt="FAQ Visual"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            {/* Left Column: Image */}
+            <div className="relative lg:sticky lg:top-24">
+              <div className="relative w-full max-w-[500px] aspect-square rounded-[40px] overflow-hidden group mx-auto lg:mx-0">
+                <Image
+                  src="/images/about_hands_4k.png"
+                  alt="FAQ Visual"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-              {/* Sticky Corner Effect - Bottom Left */}
-              <div className="absolute bottom-0 left-0 z-20">
-                {/* Visual Block itself - Empty white corner */}
-                <div className="bg-white w-32 h-32 rounded-tr-[40px] flex items-center justify-center relative">
-                  {/* Empty content */}
+                {/* Sticky Corner Effect - Bottom Left */}
+                <div className="absolute bottom-0 left-0 z-20">
+                  {/* Visual Block itself - Empty white corner */}
+                  <div className="bg-white w-32 h-32 rounded-tr-[40px] flex items-center justify-center relative">
+                    {/* Empty content */}
+                  </div>
+
+                  {/* Right Connector */}
+                  <StickyCorner
+                    className="absolute bottom-0 -right-10 w-10 h-10"
+                    fill="#ffffff"
+                    style={{ transform: "rotate(90deg)" }}
+                  />
+                  {/* Top Connector */}
+                  <StickyCorner
+                    className="absolute -top-10 left-0 w-10 h-10"
+                    fill="#ffffff"
+                    style={{ transform: "rotate(90deg)" }}
+                  />
                 </div>
-
-                {/* Right Connector */}
-                <StickyCorner
-                  className="absolute bottom-0 -right-10 w-10 h-10"
-                  fill="#ffffff"
-                  style={{ transform: "rotate(90deg)" }}
-                />
-                {/* Top Connector */}
-                <StickyCorner
-                  className="absolute -top-10 left-0 w-10 h-10"
-                  fill="#ffffff"
-                  style={{ transform: "rotate(90deg)" }}
-                />
               </div>
             </div>
-          </div>
 
-          {/* Right Column: Accordion */}
-          <div className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                question={faq.question}
-                answer={faq.answer}
-                isOpen={openIndex === index}
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              />
-            ))}
+            {/* Right Column: Accordion */}
+            <div className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openIndex === index}
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

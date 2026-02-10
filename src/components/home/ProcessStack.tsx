@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { ContainerScroll, CardSticky } from "@/components/ui/cards-stack";
 
 const PROCESS_PHASES = [
@@ -39,17 +42,25 @@ export const ProcessStack = () => {
       <div className="container px-6 xl:px-12 mx-auto">
         <div className="grid md:grid-cols-2 md:gap-8 xl:gap-12">
           <div className="left-0 top-0 md:sticky md:h-svh md:py-12 flex flex-col justify-center items-center text-center md:items-start md:text-left">
-            <h5 className="text-xs uppercase tracking-wide text-[#f55733] font-bold font-sans">
-              Unser Prozess
-            </h5>
-            <h2 className="mb-6 mt-4 text-4xl font-bold font-sans tracking-tight text-[#333]">
-              Planung Ihres <span className="text-[#f55733]">Bauprojekts</span>
-            </h2>
-            <p className="max-w-prose text-base text-[#545454] font-sans">
-              Unser Weg beginnt mit einem tiefen Verständnis für Ihre Vision.
-              Wir begleiten Sie von der ersten Idee bis zur fertigen Umsetzung
-              mit Fachwissen, Leidenschaft und Präzision.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <h5 className="text-xs uppercase tracking-wide text-[#f55733] font-bold font-sans">
+                Unser Prozess
+              </h5>
+              <h2 className="mb-6 mt-4 text-4xl font-bold font-sans tracking-tight text-[#333]">
+                Planung Ihres{" "}
+                <span className="text-[#f55733]">Bauprojekts</span>
+              </h2>
+              <p className="max-w-prose text-base text-[#545454] font-sans">
+                Unser Weg beginnt mit einem tiefen Verständnis für Ihre Vision.
+                Wir begleiten Sie von der ersten Idee bis zur fertigen Umsetzung
+                mit Fachwissen, Leidenschaft und Präzision.
+              </p>
+            </motion.div>
           </div>
           <ContainerScroll className="min-h-[250vh] space-y-8 py-12">
             {PROCESS_PHASES.map((phase, index) => (

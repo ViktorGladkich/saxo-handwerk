@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const TEAM_MEMBERS = [
   {
@@ -20,23 +21,57 @@ const TEAM_MEMBERS = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeInOut" },
+  },
+} as const;
+
 export const TeamSection = () => {
   return (
     <section className="bg-white px-6 py-24 md:px-12 lg:px-24" id="team">
       <div className="mx-auto max-w-[1440px] flex flex-col gap-16">
-        <div className="flex flex-col items-center text-center mb-16">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex flex-col items-center text-center mb-16"
+        >
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#f55733] to-[#d43d1a] font-bold tracking-wider uppercase w-fit text-sm mb-4">
             Unser Team
           </span>
           <h2 className="font-sans text-4xl font-bold tracking-tight text-[#333333] md:text-6xl">
             Experten für Ihr Bauvorhaben
           </h2>
-        </div>
+        </motion.div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
           {TEAM_MEMBERS.map((member, index) => (
-            <div
+            <motion.div
+              variants={itemVariants}
               key={index}
               className="group relative aspect-3/4 w-full overflow-hidden rounded-[40px] bg-gray-100"
             >
@@ -94,9 +129,9 @@ export const TeamSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

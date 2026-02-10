@@ -212,7 +212,7 @@ export const ContactSection = () => {
               <div className="mt-4 flex items-center justify-end">
                 <button
                   type="submit"
-                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#f55733] px-8 py-4 text-lg font-bold text-white transition-all duration-300 hover:bg-[#d43d1a] hover:pr-10 hover:shadow-lg hover:shadow-[#f55733]/40"
+                  className="group relative cursor-pointer inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#f55733] px-8 py-4 text-lg font-bold text-white transition-all duration-300 hover:bg-[#d43d1a] hover:pr-10 hover:shadow-lg hover:shadow-[#f55733]/40"
                 >
                   <span>Nachricht senden</span>
                   <Send className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />

@@ -3,13 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "./nav-data";
 import { cn } from "@/lib/utils";
-import { Facebook, Instagram, Twitter, X } from "lucide-react";
+import { Facebook, Instagram, Twitter } from "lucide-react";
 
 export const Sidebar = () => {
-  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
@@ -18,18 +16,40 @@ export const Sidebar = () => {
       {/* MAIN SIDEBAR (Fixed, Always Visible) */}
       <aside className="fixed left-0 top-0 z-50 hidden h-screen w-[80px] flex-col items-center bg-[#111111] md:flex shadow-2xl py-8 gap-8">
         {/* Toggle Button */}
+        {/* Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-12 h-12 bg-[#fcfcfc] rounded-full flex flex-col items-center justify-center gap-[5px] cursor-pointer hover:scale-105 transition-transform shadow-lg z-50 group"
+          className="w-12 h-12 bg-[#fcfcfc] rounded-full flex flex-col items-center justify-center gap-[6px] cursor-pointer hover:scale-105 transition-transform shadow-lg z-50 group relative"
         >
-          {isOpen ? (
-            <X className="w-5 h-5 text-[#333333]" />
-          ) : (
-            <>
-              <div className="w-5 h-[2px] bg-[#333333] transition-all group-hover:w-6" />
-              <div className="w-5 h-[2px] bg-[#333333] transition-all group-hover:w-4" />
-            </>
-          )}
+          <motion.div
+            animate={isOpen ? "open" : "closed"}
+            className="flex flex-col gap-[6px] items-center justify-center"
+          >
+            <motion.span
+              variants={{
+                closed: { rotate: 0, y: 0 },
+                open: { rotate: 45, y: 8 },
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="w-5 h-[2px] bg-[#333333] block"
+            />
+            <motion.span
+              variants={{
+                closed: { opacity: 1 },
+                open: { opacity: 0 },
+              }}
+              transition={{ duration: 0.2 }}
+              className="w-5 h-[2px] bg-[#333333] block"
+            />
+            <motion.span
+              variants={{
+                closed: { rotate: 0, y: 0 },
+                open: { rotate: -45, y: -8 },
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="w-5 h-[2px] bg-[#333333] block"
+            />
+          </motion.div>
         </button>
 
         {/* Spacer / Vertical Logo Container */}
@@ -97,9 +117,7 @@ export const Sidebar = () => {
             >
               <nav className="flex-1 overflow-y-auto flex flex-col">
                 {NAV_ITEMS.map((item) => {
-                  const isActive = pathname === item.href;
                   const isHovered = hovered === item.label;
-                  const isContact = item.label === "Contact";
 
                   return (
                     <Link
@@ -108,54 +126,51 @@ export const Sidebar = () => {
                       onClick={() => setIsOpen(false)}
                       onMouseEnter={() => setHovered(item.label)}
                       onMouseLeave={() => setHovered(null)}
-                      className="group relative flex items-center px-8 h-[60px] border-b border-[#cfcfcf] overflow-hidden"
+                      className="group relative block"
                     >
-                      {/* Hover Background Animation - Left to Right */}
-                      <motion.div
-                        className="absolute inset-0 bg-[#f55733]"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: isActive || isHovered ? 1 : 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        style={{ transformOrigin: "left" }}
-                      />
+                      {/* Container for the link item */}
+                      <div className="relative flex items-center justify-between px-8 py-6 border-b border-[#cfcfcf] overflow-hidden transition-colors h-24">
+                        {/* Hover Background Animation - Left to Right */}
+                        <motion.div
+                          className="absolute inset-0 bg-[#f55733] z-0"
+                          initial={{ x: "-100%" }}
+                          animate={{ x: isHovered ? "0%" : "-100%" }}
+                          transition={{
+                            duration: 0.3,
+                            ease: [0.22, 1, 0.36, 1],
+                          }} // smooth easeOutCubic-ish
+                        />
 
-                      <div className="relative z-10 flex items-center justify-between w-full h-full">
-                        {/* Label */}
-                        <p
-                          className={cn(
-                            "text-[14px] font-medium transition-colors duration-200 tracking-wide",
-                            isActive || isHovered
-                              ? "text-white underline decoration-white underline-offset-4"
-                              : "text-[#333333]",
-                          )}
-                        >
-                          {item.label}
-                        </p>
-
-                        {/* Right Side Icons (Arrow or Dot) */}
-                        <div className="flex items-center gap-2">
-                          {/* Contact Glowing Dot */}
-                          {isContact && (
-                            <div className="relative flex items-center justify-center w-3 h-3 mr-2">
-                              <div className="absolute w-full h-full bg-[#15bf5f] rounded-full animate-ping opacity-50" />
-                              <div className="relative w-2 h-2 bg-[#15bf5f] rounded-full" />
+                        {/* Text Label */}
+                        <div className="relative z-10 flex items-center gap-4">
+                          {/* Pulse Dot for CONTACT only */}
+                          {(item.label === "Contact" ||
+                            item.label === "Kontakt") && (
+                            <div className="relative flex h-3 w-3">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#15bf5f] opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#15bf5f]"></span>
                             </div>
                           )}
 
-                          {/* Arrow Icon */}
+                          <span
+                            className={cn(
+                              "text-3xl font-bold tracking-tight transition-colors duration-300",
+                              isHovered ? "text-white" : "text-[#333333]",
+                            )}
+                          >
+                            {item.label}
+                          </span>
+                        </div>
+
+                        {/* Arrow Icon */}
+                        <div className="relative z-10">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 256 256"
                             className={cn(
-                              "w-4 h-4 transition-colors duration-200",
-                              isActive || isHovered
-                                ? "fill-white text-white"
-                                : "fill-[#fcfcfc] text-[#fcfcfc]",
+                              "w-8 h-8 transition-colors duration-300",
+                              isHovered ? "fill-white" : "fill-[#e0e0e0]",
                             )}
-                            style={{
-                              fill:
-                                isActive || isHovered ? "#ffffff" : "#e0e0e0",
-                            }}
                           >
                             <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
                           </svg>

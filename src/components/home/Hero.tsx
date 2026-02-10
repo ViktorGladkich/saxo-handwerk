@@ -100,7 +100,7 @@ export const Hero = () => {
               className="absolute bottom-36 right-10 z-30"
             >
               <Link
-                href="#services"
+                href="#about"
                 className="group relative flex h-[150px] w-[150px] items-center justify-center rounded-full bg-white/60 backdrop-blur-[5px] transition-colors duration-300 hover:bg-[#f55733]"
               >
                 <motion.div
@@ -253,7 +253,7 @@ export const Hero = () => {
             {/* Circular Scroll Button */}
             <div className="mr-6 mb-6 pointer-events-auto">
               <Link
-                href="#services"
+                href="#about"
                 className="group relative flex h-[120px] w-[120px] items-center justify-center rounded-full bg-white/60 backdrop-blur-[5px] transition-colors duration-300 hover:bg-[#f55733]"
               >
                 <motion.div

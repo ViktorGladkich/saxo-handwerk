@@ -19,8 +19,16 @@ export const Hero = () => {
   const floatX = useTransform(scrollYProgress, [0, 0.3], ["0%", "200%"]);
 
   // Mobile Animation
-  const mobilePanelY = useTransform(scrollYProgress, [0, 0.5], ["0%", "-100%"]);
-  const mobileBottomY = useTransform(scrollYProgress, [0, 0.3], ["0%", "200%"]);
+  const mobilePanelY = useTransform(
+    scrollYProgress,
+    [0, 0.35],
+    ["0%", "-100%"],
+  );
+  const mobileBottomY = useTransform(
+    scrollYProgress,
+    [0, 0.25],
+    ["0%", "200%"],
+  );
 
   return (
     <section ref={containerRef} className="relative h-[300vh] bg-white">

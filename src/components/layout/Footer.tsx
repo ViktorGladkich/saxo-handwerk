@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="flex flex-col gap-12">
             {/* Brand & Contact */}
             <div className="flex flex-col gap-8">
-              <span className="text-5xl md:text-6xl font-black uppercase tracking-tighter text-neutral-900">
+              <span className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-neutral-900">
                 Saxo<span className="text-[#f55733]">Handwerk</span>
               </span>
 

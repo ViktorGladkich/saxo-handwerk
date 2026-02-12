@@ -30,7 +30,7 @@ export const TopNav = () => {
         <Link
           href="/"
           onClick={() => setIsOpen(false)}
-          className="flex items-center gap-3"
+          className="flex items-center"
         >
           <Image
             src="/saho-logo.png"
@@ -39,9 +39,6 @@ export const TopNav = () => {
             height={40}
             className="object-contain"
           />
-          <span className="text-white font-black text-xl tracking-tighter uppercase">
-            Saxo<span className="text-[#f55733]">Handwerk</span>
-          </span>
         </Link>
 
         {/* Animated Hamburger Button */}

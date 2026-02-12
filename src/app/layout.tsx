@@ -4,6 +4,8 @@ import "./globals.css";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { TopNav } from "@/components/layout/TopNav";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { PageTransition } from "@/components/ui/page-transition";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -29,6 +31,7 @@ export default function RootLayout({
     <html lang="de">
       <body className={`${nunito.variable} antialiased bg-white text-gray-900`}>
         <SmoothScrolling>
+          <ScrollToTop />
           <div className="flex min-h-screen flex-col md:flex-row">
             {/* Sidebar for Desktop */}
             <Sidebar />
@@ -38,7 +41,9 @@ export default function RootLayout({
 
             {/* Main Content Area Wrapper */}
             <div className="flex flex-1 flex-col md:ml-20 mt-0! md:mt-0! transition-all duration-300 min-h-screen relative">
-              <main className="flex-1">{children}</main>
+              <main className="flex-1">
+                <PageTransition>{children}</PageTransition>
+              </main>
               <Footer />
             </div>
           </div>

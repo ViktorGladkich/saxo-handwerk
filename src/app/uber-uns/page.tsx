@@ -11,7 +11,7 @@ export default function AboutPage() {
         title="Über Uns"
         imageSrc="/images/about_hands_4k.png" // Use existing image
         revealedTitle="Handwerk aus Leidenschaft"
-        subtitle="Seit 2010"
+        subtitle="QUALITÄT & VERTRAUEN"
       />
       <AboutSection />
       <TeamSection />

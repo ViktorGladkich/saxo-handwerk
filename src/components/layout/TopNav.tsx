@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { NAV_ITEMS } from "./nav-data";
 import { cn } from "@/lib/utils";
 
@@ -29,8 +30,15 @@ export const TopNav = () => {
         <Link
           href="/"
           onClick={() => setIsOpen(false)}
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
         >
+          <Image
+            src="/saho-logo.png"
+            alt="Saxo Handwerk Logo"
+            width={40}
+            height={40}
+            className="object-contain"
+          />
           <span className="text-white font-black text-xl tracking-tighter uppercase">
             Saxo<span className="text-[#f55733]">Handwerk</span>
           </span>

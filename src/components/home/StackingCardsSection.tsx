@@ -111,7 +111,7 @@ const Card = ({
           {/* Text Content */}
           <div className="w-full md:w-[40%] flex flex-col justify-between relative z-10 h-full">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black font-sans uppercase tracking-tight text-[#111] mb-6 drop-shadow-sm leading-[0.9]">
+              <h2 className="text-3xl md:text-4xl font-black font-sans uppercase tracking-tight text-[#111] mb-6 drop-shadow-sm leading-[0.9]">
                 {title}
               </h2>
               <p className="text-lg text-[#555] font-sans leading-relaxed">
@@ -119,15 +119,9 @@ const Card = ({
               </p>
             </div>
 
-            <span className="text-9xl font-black text-[#f55733]/10 absolute bottom-[-40px] left-[-20px] select-none pointer-events-none z-[-1]">
+            <span className="hidden md:block text-9xl font-black text-[#f55733]/10 absolute bottom-[-40px] left-[-20px] select-none pointer-events-none z-[-1]">
               0{i + 1}
             </span>
-
-            <div className="mt-auto">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#f55733]">
-                Mehr erfahren
-              </span>
-            </div>
           </div>
 
           {/* Image Container */}

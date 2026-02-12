@@ -14,19 +14,19 @@ export const Hero = () => {
   });
 
   // Animation values
-  const leftX = useTransform(scrollYProgress, [0, 0.4], ["0%", "-100%"]);
-  const rightWidth = useTransform(scrollYProgress, [0, 0.4], ["50%", "100%"]);
-  const floatX = useTransform(scrollYProgress, [0, 0.3], ["0%", "200%"]);
+  const leftX = useTransform(scrollYProgress, [0, 0.2], ["0%", "-100%"]);
+  const rightWidth = useTransform(scrollYProgress, [0, 0.2], ["50%", "100%"]);
+  const floatX = useTransform(scrollYProgress, [0, 0.15], ["0%", "200%"]);
 
   // Mobile Animation
   const mobilePanelY = useTransform(
     scrollYProgress,
-    [0, 0.35],
+    [0, 0.15],
     ["0%", "-100%"],
   );
   const mobileBottomY = useTransform(
     scrollYProgress,
-    [0, 0.25],
+    [0, 0.12],
     ["0%", "200%"],
   );
 

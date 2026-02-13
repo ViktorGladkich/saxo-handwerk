@@ -19,7 +19,7 @@ export const Footer = () => {
     <footer className="relative bg-[#111111] text-white overflow-hidden">
       {/* Large background brand text */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none">
-        <span className="text-[20vw] font-black uppercase tracking-tighter text-white/[0.02] leading-none whitespace-nowrap">
+        <span className="text-[20vw] font-black uppercase tracking-tighter text-white\/\[0\.02\] leading-none whitespace-nowrap">
           SAXO
         </span>
       </div>

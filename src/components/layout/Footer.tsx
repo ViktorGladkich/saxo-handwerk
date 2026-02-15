@@ -18,8 +18,8 @@ export const Footer = () => {
   return (
     <footer className="relative bg-[#111111] text-white overflow-hidden">
       {/* Large background brand text */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none">
-        <span className="text-[20vw] font-black uppercase tracking-tighter text-white\/\[0\.02\] leading-none whitespace-nowrap">
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none select-none z-0 flex justify-between px-4">
+        <span className="text-[25vw] font-black uppercase tracking-tighter text-white opacity-5 leading-none w-full text-center">
           SAXO
         </span>
       </div>
@@ -106,14 +106,14 @@ export const Footer = () => {
                 className="flex items-center gap-3 text-white/60 hover:text-white transition-colors font-sans text-sm w-fit"
               >
                 <Phone className="h-4 w-4 text-[#f55733] shrink-0" />
-                +49 (0) 123 456 789
+                +49 (176) 31709988
               </a>
               <a
                 href="mailto:kontakt@saxo-handwerk.de"
                 className="flex items-center gap-3 text-white/60 hover:text-white transition-colors font-sans text-sm w-fit"
               >
                 <Mail className="h-4 w-4 text-[#f55733] shrink-0" />
-                kontakt@saxo-handwerk.de
+                info@saxo-handwerk.com
               </a>
               <div className="flex items-start gap-3 text-white/60 font-sans text-sm">
                 <MapPin className="h-4 w-4 text-[#f55733] shrink-0 mt-0.5" />

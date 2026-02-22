@@ -139,7 +139,7 @@ export const WhyUsSection = () => {
           className="text-center mb-16 md:mb-24"
         >
           <span className="text-[#f55733] font-bold font-sans uppercase tracking-[0.3em] text-sm">
-            Warum SaxoHandwerk
+            Warum VanturaHandwerk
           </span>
           <h2 className="text-4xl md:text-7xl font-black font-sans text-[#111] uppercase tracking-tighter mt-4 leading-[0.9]">
             6 Gründe für
@@ -231,7 +231,7 @@ export const WhyUsSection = () => {
             <div className="relative h-[250px] md:h-full min-h-[250px]">
               <Image
                 src="/images/cta_consultation.png"
-                alt="SaxoHandwerk Beratung"
+                alt="VanturaHandwerk Beratung"
                 fill
                 className="object-cover"
               />

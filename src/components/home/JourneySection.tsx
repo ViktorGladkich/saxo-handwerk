@@ -17,7 +17,7 @@ const MILESTONES = [
     year: "2016",
     title: "Gründung",
     description:
-      "SaxoHandwerk wurde in Dresden gegründet — mit einer klaren Vision: Handwerk auf höchstem Niveau.",
+      "VanturaHandwerk wurde in Dresden gegründet — mit einer klaren Vision: Handwerk auf höchstem Niveau.",
     icon: MapPin,
     accent: "#f55733",
   },
@@ -234,7 +234,7 @@ export const JourneySection = () => {
                 die Generationen überdauert.&rdquo;
               </p>
               <span className="text-white/30 font-sans font-bold text-sm mt-4 block uppercase tracking-wider">
-                — SaxoHandwerk Team
+                — VanturaHandwerk Team
               </span>
             </motion.div>
           </div>

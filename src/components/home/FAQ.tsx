@@ -32,7 +32,7 @@ const StickyCorner = ({
 // FAQ Data
 const faqs = [
   {
-    question: "Welche Leistungen bietet Saxo Handwerk genau an?",
+    question: "Welche Leistungen bietet Vantura Handwerk genau an?",
     answer:
       "Wir sind Ihr komplettanbieter für Sanierungen und Renovierungen. Unser Spektrum reicht vom Trockenbau und Innenausbau über Bodenverlegung und Fliesenarbeiten bis hin zu Fassadengestaltung und dem Einbau von Fenstern & Türen. Alles aus einer Hand.",
   },

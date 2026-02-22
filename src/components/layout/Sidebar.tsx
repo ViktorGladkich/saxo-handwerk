@@ -57,16 +57,8 @@ export const Sidebar = () => {
           {/* Vertical Brand */}
           <div className="relative w-full h-full flex items-center justify-center">
             <div className="transform -rotate-90 flex items-center gap-4 origin-center">
-              <div className="relative w-8 h-8 shrink-0">
-                <Image
-                  src="/saho-logo.png"
-                  alt="Saxo Handwerk"
-                  fill
-                  className="object-contain" // White logo? If it's black it might be invisible on dark bg. Assuming logo is fine.
-                />
-              </div>
               <span className="text-[#fcfcfc] font-bold text-sm tracking-[0.25em] whitespace-nowrap opacity-80 hover:opacity-100 transition-opacity select-none cursor-default">
-                SAXO HANDWERK
+                VANTURA HANDWERK
               </span>
             </div>
           </div>
@@ -125,15 +117,8 @@ export const Sidebar = () => {
             >
               {/* Drawer Header */}
               <div className="flex items-center gap-3 px-8 py-8 border-b border-[#cfcfcf]">
-                <Image
-                  src="/saho-logo.png"
-                  alt="Saxo Handwerk"
-                  width={50}
-                  height={50}
-                  className="object-contain"
-                />
                 <span className="text-2xl font-black uppercase tracking-tighter text-[#333]">
-                  Saxo<span className="text-[#f55733]">Handwerk</span>
+                  Vantura<span className="text-[#f55733]">Handwerk</span>
                 </span>
               </div>
 

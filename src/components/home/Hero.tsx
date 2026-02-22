@@ -57,7 +57,7 @@ export const Hero = () => {
               {/* Headline */}
               <div className="relative">
                 <h1 className="text-[6vw] font-sans font-black leading-[0.85] tracking-tighter text-black uppercase">
-                  Saxo
+                  Vantura
                   <br />
                   <span className="text-[#f55733]">Handwerk</span>
                 </h1>
@@ -219,7 +219,7 @@ export const Hero = () => {
 
               {/* Headline */}
               <h1 className="text-5xl font-sans font-black leading-[0.9] tracking-tighter text-black uppercase">
-                Saxo
+                Vantura
                 <br />
                 <span className="text-[#f55733]">Handwerk</span>
               </h1>

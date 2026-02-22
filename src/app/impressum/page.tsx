@@ -8,7 +8,7 @@ export default function ImpressumPage() {
         <div className="prose prose-lg text-gray-600 font-sans">
           <p>Angaben gemäß § 5 TMG</p>
 
-          <h3 className="text-[#333] font-bold mt-8">Saxo Handwerk</h3>
+          <h3 className="text-[#333] font-bold mt-8">Vantura Handwerk</h3>
           <p>
             Musterstraße 123
             <br />
@@ -22,7 +22,7 @@ export default function ImpressumPage() {
           <p>
             Telefon: +49 (0) 123 445566
             <br />
-            E-Mail: info@saxo-handwerk.de
+            E-Mail: info@vantura-handwerk.de
           </p>
 
           <h3 className="text-[#333] font-bold mt-8">Umsatzsteuer-ID:</h3>

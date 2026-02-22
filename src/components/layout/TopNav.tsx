@@ -31,15 +31,7 @@ export const TopNav = () => {
           href="/"
           onClick={() => setIsOpen(false)}
           className="flex items-center"
-        >
-          <Image
-            src="/saho-logo.png"
-            alt="Saxo Handwerk Logo"
-            width={40}
-            height={40}
-            className="object-contain"
-          />
-        </Link>
+        ></Link>
 
         {/* Animated Hamburger Button */}
         <button

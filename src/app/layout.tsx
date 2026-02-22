@@ -13,7 +13,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Saxo Handwerk - Professional Renovation & Construction in Saxony",
+  title: "VANTURA Handwerk - Professional Renovation & Construction in Saxony",
   description:
     "Expert door and window replacement, bathroom renovation, flooring, interior fit-out, and more in Saxony. Quality craftsmanship from a single source.",
 };

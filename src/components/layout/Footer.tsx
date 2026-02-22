@@ -19,8 +19,8 @@ export const Footer = () => {
     <footer className="relative bg-[#111111] text-white overflow-hidden">
       {/* Large background brand text */}
       <div className="absolute bottom-0 left-0 w-full pointer-events-none select-none z-0 flex justify-between px-4">
-        <span className="text-[25vw] font-black uppercase tracking-tighter text-white opacity-5 leading-none w-full text-center">
-          SAXO
+        <span className="text-[18vw] md:text-[20vw] font-black uppercase tracking-tighter text-white opacity-5 leading-none w-full text-center">
+          VANTURA
         </span>
       </div>
 
@@ -30,15 +30,8 @@ export const Footer = () => {
           {/* Col 1: Brand & Tagline */}
           <div className="lg:col-span-1 flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 w-fit">
-              <Image
-                src="/saho-logo.png"
-                alt="SaxoHandwerk Logo"
-                width={44}
-                height={44}
-                className="object-contain"
-              />
               <span className="text-2xl font-black uppercase tracking-tighter">
-                Saxo<span className="text-[#f55733]">Handwerk</span>
+                Vantura<span className="text-[#f55733]">Handwerk</span>
               </span>
             </Link>
             <p className="text-white/50 font-sans text-sm leading-relaxed max-w-xs">
@@ -109,11 +102,11 @@ export const Footer = () => {
                 +49 (176) 31709988
               </a>
               <a
-                href="mailto:kontakt@saxo-handwerk.de"
+                href="mailto:kontakt@vantura-handwerk.de"
                 className="flex items-center gap-3 text-white/60 hover:text-white transition-colors font-sans text-sm w-fit"
               >
                 <Mail className="h-4 w-4 text-[#f55733] shrink-0" />
-                info@saxo-handwerk.com
+                info@vantura-handwerk.com
               </a>
               <div className="flex items-start gap-3 text-white/60 font-sans text-sm">
                 <MapPin className="h-4 w-4 text-[#f55733] shrink-0 mt-0.5" />
@@ -151,7 +144,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/30 font-sans text-xs">
-            &copy; {new Date().getFullYear()} SaxoHandwerk. Alle Rechte
+            &copy; {new Date().getFullYear()} VanturaHandwerk. Alle Rechte
             vorbehalten.
           </p>
 

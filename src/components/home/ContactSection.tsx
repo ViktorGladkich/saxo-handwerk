@@ -92,7 +92,7 @@ export const ContactSection = () => {
                     E-Mail
                   </h4>
                   <p className="font-sans text-gray-400">
-                    kontakt@saxo-handwerk.de
+                    kontakt@vantura-handwerk.de
                   </p>
                   <p className="text-sm text-gray-500">
                     Wir antworten in der Regel innerhalb von 24h.
